@@ -16,7 +16,7 @@
 
 	var hiddenOpacity = 0.9;
 	var hiddenBackColor = '#EAEAE2';
-	var spinnerImage = 'https://github.com/apankrat/internet-improvement-project/raw/master/hn/hn-spinner.gif';
+	var spinnerImage = 'https://raw.githubusercontent.com/bprs/internet-improvement-project/master/hn/hn-spinner.gif';
 
 	var placeholderHeight = 0;
 	var itemCache = new Array();
@@ -439,16 +439,16 @@
 		var tables = $('center > table > tbody > tr table');
 		if (tables.length != 3)
 		{
-			console.log('Selectivity for HN - not running, not an index page');
+			console.log('Selectivity for HN - not running, not an index page - tables.length=' + tables.length);
 			return;
 		}
 
-		var id = $(tables[1]).find('tr td').eq(0).html();
+		var id = $(tables[1]).find('tr td span').eq(0).html();
 		var re = /^[0-9]+\.$/;
 
 		if (! re.exec(id))
 		{
-			console.log('Selectivity for HN - not running, not an index page');
+			console.log('Selectivity for HN - not running, not an index page - id=' + id);
 			return;
 		}
 
@@ -520,7 +520,7 @@
 		items.each(function(){
 			var id = getItemId( $(this) );
 			if (localStorage.getItem(id))
-				hideItem( $(this) );				
+				hideItem( $(this) );
 		});
 	}
 
