@@ -333,7 +333,7 @@
 			return;
 		}
 
-		var re = /<table border=0 cellpadding=0 cellspacing=0>(.*?)<\/table>/;
+		var re = /<table border="0" cellpadding="0" cellspacing="0">(.*?)<\/table>/;
 		var bulk = re.exec(msg);
 		if (! bulk)
 		{
